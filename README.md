@@ -23,7 +23,27 @@ If our code or data helps you in your research, please kindly cite us:
 
 The problem of community-level information pathway prediction (CLIPP) aims at predicting the transmission trajectory of content across online communities. A successful solution to CLIPP holds significance as it facilitates the distribution of valuable information to a larger audience and prevents the proliferation of misinformation. Notably, solving CLIPP is non-trivial as inter-community relationships and influence are unknown, information spread is multi-modal, and new content and new communities appear over time. In this work, we address CLIPP by collecting large-scale, multi-modal datasets to examine the diffusion of online YouTube videos on Reddit. We analyze these datasets to construct community influence graphs (CIGs) and develop a novel dynamic graph framework, INPAC (Information Pathway Across Online Communities), which incorporates CIGs to capture the temporal variability and multi-modal nature of video propagation across communities. Experimental results in both warm-start and cold-start scenarios show that INPAC outperforms seven baselines in CLIPP. 
 
-![INPAC](asset/INPAC.png)
+![INPAC](static/img/INPAC.png)
+
+## 🤗 HuggingFace Dataset
+
+We constructed real-world, large-scale datasets covering 60 months of Reddit posts sharing YouTube videos, from January 2018 to December 2022, available on 🤗 HuggingFace (<a href="https://huggingface.co/datasets/Ahren09/reddit">Ahren09/reddit</a>)
+
+Install the `datasets` library:
+
+```bash
+pip install datasets
+```
+
+You can load the dataset using:
+
+```python]
+from datasets import load_dataset
+
+dataset = load_dataset("Ahren09/reddit", "2018") 
+```
+
+where "2018" is the subset name. Replace it with "2019", ..., "2022" to load the other subsets
 
 ## Installation
 

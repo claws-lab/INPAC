@@ -22,7 +22,6 @@ logs/
 
 # Text files
 *.txt
-*.html
 *.tsv
 *.xlsx
 *.csv

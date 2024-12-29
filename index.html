@@ -1,0 +1,520 @@
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+	google.load("jquery", "1.3.2");
+</script>
+
+<style type="text/css">
+	body {
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		font-weight: 300;
+		font-size: 18px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 1100px;
+	}
+
+	h1 {
+		font-size: 32px;
+		font-weight: 300;
+	}
+
+	.colname {
+		font-weight: bold;
+	}
+
+	.disclaimerbox {
+		background-color: #eee;
+		border: 1px solid #eeeeee;
+		border-radius: 10px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+		padding: 20px;
+	}
+
+	video.header-vid {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+	}
+
+	img.header-img {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+	}
+
+	img.rounded {
+		border: 1px solid #eeeeee;
+		border-radius: 10px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+	}
+
+	a:link,
+	a:visited {
+		color: #1367a7;
+		text-decoration: none;
+	}
+
+	a:hover {
+		color: #208799;
+	}
+
+	td.dl-link {
+		height: 160px;
+		text-align: center;
+		font-size: 22px;
+	}
+
+	.layered-paper-big {
+		/* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+			0px 0px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The top layer shadow */
+			5px 5px 0 0px #fff,
+			/* The second layer */
+			5px 5px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The second layer shadow */
+			10px 10px 0 0px #fff,
+			/* The third layer */
+			10px 10px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The third layer shadow */
+			15px 15px 0 0px #fff,
+			/* The fourth layer */
+			15px 15px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The fourth layer shadow */
+			20px 20px 0 0px #fff,
+			/* The fifth layer */
+			20px 20px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The fifth layer shadow */
+			25px 25px 0 0px #fff,
+			/* The fifth layer */
+			25px 25px 1px 1px rgba(0, 0, 0, 0.35);
+		/* The fifth layer shadow */
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+	.paper-big {
+		/* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+			0px 0px 1px 1px rgba(0, 0, 0, 0.35);
+		/* The top layer shadow */
+
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+
+	.layered-paper {
+		/* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+			0px 0px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The top layer shadow */
+			5px 5px 0 0px #fff,
+			/* The second layer */
+			5px 5px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The second layer shadow */
+			10px 10px 0 0px #fff,
+			/* The third layer */
+			10px 10px 1px 1px rgba(0, 0, 0, 0.35);
+		/* The third layer shadow */
+		margin-top: 5px;
+		margin-left: 10px;
+		margin-right: 30px;
+		margin-bottom: 5px;
+	}
+
+	.vert-cent {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	hr {
+		border: 0;
+		height: 1px;
+		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+	}
+</style>
+
+<html>
+
+<head>
+	<title>Predicting Information Pathways Across Online Communities</title>
+	<meta property="og:image" content="./static/img/Thumbnail.jpg" />
+	<!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
+	<meta property="og:title" content="Predicting Information Pathways Across Online Communities." />
+	<meta property="og:description" content="Paper description." />
+
+	<!-- Get from Google Analytics -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src=""></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-75863369-6');
+	</script>
+</head>
+
+<body>
+	<br>
+	<center>
+		<span style="font-size:36px">Predicting Information Pathways Across Online Communities</span>
+		<table align=center width=600px>
+			<table align=center width=600px>
+				<tr>
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:24px"><a href="https://ahren09.github.io/">Yiqiao Jin</a></span>
+						</center>
+					</td>
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:24px"><a href="https://sites.google.com/view/yclee/">Yeon-Chang
+									Lee</a></span>
+						</center>
+					</td>
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:24px"><a href="https://ksartik.github.io/">Kartik Sharma</a></span>
+						</center>
+					</td>
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:24px"><a href="https://www.linkedin.com/in/meng-ye-36711114b/">Meng
+									Ye</a></span>
+						</center>
+					</td>
+				</tr>
+				<tr>
+					<br />
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:24px"><a href="https://www.linkedin.com/in/ksikka/">Karan
+									Sikka</a></span>
+						</center>
+					</td>
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:24px"><a
+									href="https://www.linkedin.com/in/ajay-divakaran-3445361/">Ajay Divakaran</a></span>
+						</center>
+					</td>
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:24px"><a href="https://faculty.cc.gatech.edu/~srijan/">Srijan
+									Kumar</a></span>
+						</center>
+					</td>
+				</tr>
+			</table>
+
+
+			<span>Georgia Institute of Technology, SRI International</span><br />
+			<a href="https://www.cc.gatech.edu/"><img src="./static/img/gt-logo.png" width=200px></a>
+			<br />
+			<a href="https://www.sri.com/"><img src="./static/img/SRI-logo.png" width=200px></a><br /><br />
+
+			<span>⭐ Accepted as a research paper at <a href="https://kdd.org/kdd2023/">KDD 2023 main
+					conference</a></span>
+			<br />
+
+			<a href="https://kdd.org/kdd2023/"><img src="./static/img/kdd2023_logo.png" width="300px"></a>
+
+
+			<table align=center width=250px>
+				<tr>
+					<td align=center width=120px>
+						<center>
+							<span style="font-size:24px">[<a href='https://arxiv.org/abs/2306.02259'>Paper</a>]</span>
+						</center>
+					</td>
+					<td align=center width=120px>
+						<center>
+							<span style="font-size:24px">[<a
+									href='https://github.com/claws-lab/INPAC'>GitHub</a>]</span><br>
+						</center>
+					</td>
+					<td align=center width=120px>
+						<center>
+							<span style="font-size:28px">[<a href='https://ahren09.github.io/slides/Slides_KDD2023_INPAC.pdf'>Slides</a>]
+							</span>
+						</center>
+					</td>
+				</tr>
+				<hr>
+			</table>
+		</table>
+	</center>
+
+	<center>
+		<table align=center width=850px>
+			<tr>
+				<td width=1200px>
+					<center>
+						<img class="round" style="width:900px" src="./static/img/Thumbnail.jpg" />
+					</center>
+				</td>
+			</tr>
+		</table>
+
+	</center>
+
+	<hr>
+
+	<table align=center width=850px>
+		<center>
+			<h1>Abstract</h1>
+		</center>
+		<tr>
+			<td>
+				The problem of community-level information pathway prediction (CLIPP) aims at predicting the
+				transmission trajectory of content across online communities. A successful solution to CLIPP holds
+				significance as it facilitates the distribution of valuable information to a larger audience and
+				prevents the proliferation of misinformation. Notably, solving CLIPP is non-trivial as inter-community
+				relationships and influence are unknown, information spread is multi-modal, and new content and new
+				communities appear over time. In this work, we address CLIPP by collecting large-scale, multi-modal
+				datasets to examine the diffusion of online YouTube videos on Reddit. We analyze these datasets to
+				construct community influence graphs (CIGs) and develop a novel dynamic graph framework, INPAC
+				(Information Pathway Across Online Communities), which incorporates CIGs to capture the temporal
+				variability and multi-modal nature of video propagation across communities. Experimental results in both
+				warm-start and cold-start scenarios show that INPAC outperforms seven baselines in CLIPP.
+			</td>
+		</tr>
+	</table>
+	<br>
+
+	<hr>
+	<center>
+		<h1>Talk</h1>
+	</center>
+	<p align="center">
+		<iframe width="660" height="395" src="https://www.youtube.com/embed/xlWkXHa0gio" frameborder="0"
+			allow="autoplay; encrypted-media" allowfullscreen align="center"></iframe>
+	</p>
+
+
+
+
+	<center>
+		<h1>Code and Dataset</h1>
+	</center>
+
+
+	<table align=center width=850px>
+		<center>
+			<tr>
+				<td>
+					<b>Code</b>: We make the code for INPAC available at <a
+						href="https://github.com/claws-lab/INPAC">https://github.com/claws-lab/INPAC</a><br /><br />
+
+					<b>Updated Datasets</b>: We constructed real-world, large-scale datasets covering 60 months of
+					Reddit posts sharing YouTube videos, from January 2018 to December 2022, available on 🤗 HuggingFace (<a href="https://huggingface.co/datasets/Ahren09/reddit">Ahren09/reddit</a>)<br />
+
+				</td>
+			</tr>
+		</center>
+	</table>
+
+
+
+
+
+	<center>
+		<table class="tg">
+
+			<thead align="left">
+				<tr>
+					<th class="tg-za14"></th>
+					<th class="tg-za14">Large</th>
+					<th class="tg-za14">Small</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="colname">#Videos</td>
+					<td class="tg-za14">183,596</td>
+					<td class="tg-za14">6,802</td>
+				</tr>
+				<tr>
+					<td class="colname">#Subreddits</td>
+					<td class="tg-za14">57,894</td>
+					<td class="tg-za14">7,319</td>
+				</tr>
+				<tr>
+					<td class="colname">#Users</td>
+					<td class="tg-7zrl">291,047</td>
+					<td class="tg-7zrl">8,752</td>
+				</tr>
+				<tr>
+					<td class="colname">#Shares</td>
+					<td class="tg-7zrl">1,323,714</td>
+					<td class="tg-7zrl">36,118</td>
+				</tr>
+				<tr>
+					<td class="colname">Density</td>
+					<td class="tg-8d8j">7.96E-05</td>
+					<td class="tg-8d8j">6.11E-04</td>
+				</tr>
+				<tr>
+					<td class="colname">#Cold-Start Videos</td>
+					<td class="tg-2b7s">3,042,068</td>
+					<td class="tg-2b7s">68,095</td>
+				</tr>
+			</tbody>
+
+		</table>
+	</center>
+	<center>
+		<h1>Sample data</h1>
+	</center>
+
+	<center>
+		<table align="left">
+			<thead align="left">
+				<tr>
+					<th>url</th>
+					<th>netloc</th>
+					<th>post_id</th>
+					<th>timestamp</th>
+					<th>subreddit</th>
+					<th>author</th>
+					<th>v</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>https://youtu.be/tmmpaOZ3nQg</td>
+					<td>youtu.be</td>
+					<td>eiazyl</td>
+					<td>1577836805</td>
+					<td>virtualreality</td>
+					<td>Zweetprot</td>
+					<td>tmmpaOZ3nQg</td>
+				</tr>
+				<tr>
+					<td>https://www.youtube.com/watch?v=LuAyGWqYza4</td>
+					<td>www.youtube.com</td>
+					<td>eib0a6</td>
+					<td>1577836845</td>
+					<td>FTMMen</td>
+					<td>00110100-00110010</td>
+					<td>LuAyGWqYza4</td>
+				</tr>
+				<tr>
+					<td>https://www.youtube.com/watch?v=d4hJA7IUaDs</td>
+					<td>www.youtube.com</td>
+					<td>eib0a6</td>
+					<td>1577836845</td>
+					<td>FTMMen</td>
+					<td>00110100-00110010</td>
+					<td>d4hJA7IUaDs</td>
+				</tr>
+				<tr>
+					<td>https://www.youtube.com/watch?v=5U_2V6yr-Nw&amp;feature=youtu.be</td>
+					<td>www.youtube.com</td>
+					<td>eib0a6</td>
+					<td>1577836845</td>
+					<td>FTMMen</td>
+					<td>00110100-00110010</td>
+					<td>5U_2V6yr-Nw</td>
+				</tr>
+				<tr>
+					<td>https://youtu.be/tmmpaOZ3nQg</td>
+					<td>youtu.be</td>
+					<td>eib0em</td>
+					<td>1577836862</td>
+					<td>SteamVR</td>
+					<td>Zweetprot</td>
+					<td>tmmpaOZ3nQg</td>
+				</tr>
+				<tr>
+					<td>https://youtu.be/mumHdNhclrM</td>
+					<td>youtu.be</td>
+					<td>eib0h6</td>
+					<td>1577836869</td>
+					<td>SmallYTChannel</td>
+					<td>thevinamazing</td>
+					<td>mumHdNhclrM</td>
+				</tr>
+				<tr>
+					<td>https://youtu.be/tmmpaOZ3nQg</td>
+					<td>youtu.be</td>
+					<td>eib0nk</td>
+					<td>1577836892</td>
+					<td>VRGaming</td>
+					<td>Zweetprot</td>
+					<td>tmmpaOZ3nQg</td>
+				</tr>
+				<tr>
+					<td>https://www.youtube.com/watch?v=uxtqIvOP0rQ</td>
+					<td>www.youtube.com</td>
+					<td>eib0se</td>
+					<td>1577836909</td>
+					<td>ripplers</td>
+					<td>daNext1</td>
+					<td>uxtqIvOP0rQ</td>
+				</tr>
+				<tr>
+					<td>https://youtu.be/tmmpaOZ3nQg</td>
+					<td>youtu.be</td>
+					<td>eib0ur</td>
+					<td>1577836917</td>
+					<td>HTC_Vive</td>
+					<td>Zweetprot</td>
+					<td>tmmpaOZ3nQg</td>
+				</tr>
+				<tr>
+					<td>https://youtu.be/HE1Vy5lKuzw</td>
+					<td>youtu.be</td>
+					<td>eib0wn</td>
+					<td>1577836926</td>
+					<td>HelpMeFind</td>
+					<td>Sanojoj</td>
+					<td>HE1Vy5lKuzw</td>
+				</tr>
+			</tbody>
+		</table>
+	</center>
+
+	<br />
+	<br />
+
+
+
+	<table align=center width=670px>
+		<tr>
+			<td><span style="font-size:11pt">
+					<span style="font-size: 14pt">If you find this dataset / framework useful, please kindly cite our paper:</span><br /><br />
+					<left>
+						<code>
+							<text style="color: red">@inproceedings</text>{jin2023predicting,<br />
+							<text style="color: blue">title</text>=Predicting Information Pathways Across Online
+							Communities},<br />
+							<text style="color: blue">author</text>={Jin, Yiqiao and Lee, Yeon-Chang and Sharma, Kartik
+							and Ye, Meng and Sikka, Karan and Divakaran, Ajay and Kumar, Srijan},<br />
+							<text style="color: blue">booktitle</text>={KDD},<br />
+							<text style="color: blue">year</text>={2023}<br />
+							}
+						</code>
+					</left>
+			</td>
+		</tr>
+	</table>
+
+	<hr>
+	<br>
+
+</body>
+
+</html>
