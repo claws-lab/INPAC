@@ -82,7 +82,7 @@ python main.py --dataset_name small --do_static_modeling --session_split_method 
 
 ## Data
 
-The data can be downloaded from [Google Drive](https://drive.google.com/drive/folders/1zgqbBHpQKt_RUJrIRISfZILUXLxPTx1I?usp=sharing). Please put the entire `data/` folder under `INPAC` 
+The data can be downloaded from [Google Drive](https://drive.google.com/drive/folders/1r4j55smuLxArRJPdBIvj4OWqzZzeNVqs?usp=drive_link). Please put the entire `data/` folder under `INPAC` 
 
 The `urls_df.pkl` file contains the unfiltered data:
 
